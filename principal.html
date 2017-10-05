@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Analisador Léxico</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <nav>
+     <div class="nav-wrapper">
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="center"></h1>
+
+    <div class="row">
+      <div class="col m6 col s12">
+        <h3 class="center">dsd</h3>
+        <div class="row">
+          <div style="margin-top: 7px" class="col m10 col s10 tooltipped" data-position="botton" data-delay="50"  data-tooltip="Adicione uma palavra de cada vez">
+            <input placeholder="Insira aqui as palavras para compor o dicionário léxico" class="campo-dicionario"></imput>
+          </div>
+            <a class="btn-floating btn-small waves-effect waves-light blue botao-inserir tooltipped" data-position="botton" data-delay="50"  data-tooltip="Adicionar palavra ao dicionário">
+              <i class="material-icons">add</i>
+            </a>
+        </div>
+
+        <div class="row">
+          <div class="col m10 col s10">
+            <label for=".quadro-de-palavras" >Dicionário Léxico</label>
+            <p class="quadro-de-palavras" ></p>
+          </div>
+            <a style="margin-top: 30px" class="btn tooltipped btn-floating btn-small waves-effect waves-light blue inserir-na-tabela" data-position="top" data-delay="50"  data-tooltip="Montar tabela">
+              <i class="material-icons">view_headline</i>
+            </a>
+        </div>
+
+        <div class="row">
+          <div class="col s12 col m12">
+            <textarea placeholder="Teste as palavras aqui" class="campo-digitacao campo-desativado" rows="8" cols ="40"></textarea>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col s12 col m6">
+        <section >
+          <h3 class="center">tabela</h3>
+          <table class="centered bordered tabela-automato">
+            <thead>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tabela.js"></script>
+
+</body>
+</html>
