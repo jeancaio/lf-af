@@ -42,7 +42,14 @@ campo.keyup(function(e){
 
 
 function inicializaMarcadores() {
-    var frase = $(".quadro-de-palavras").text();
+
+    if(campo.length == 1){
+      campo.removeClass('borda-verde');
+  		campo.removeClass('borda-vermelha');
+  		$('#automato tr').removeClass('estado_selecionado');
+  		$('#automato td').removeClass('letra_selecionada');
+    }
+    
     campo.on("input", function(e) {
         var digitado = campo.val();
         // var comparavel = frase.substr(0, digitado.length);
