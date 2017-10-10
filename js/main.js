@@ -23,12 +23,13 @@ inserirNaTabela.one('click', function(){
     campo.attr("disabled", false);
     campo.toggleClass("campo-desativado");
     var letra = dic.text().split("");
-    caracteres = letra.filter(function(este, i){
-        return letra.indexOf(este) == i;
-    });
+    caracteres = letra
     var index = $.inArray(",", caracteres);
     if (index>=0) caracteres.splice(index, 1);
+
     insereTabela();
+    tabela = linhas();
+  	tabela_geral(tabela);
 });
 
 //detecta o espaço para poder testa a próxima palavra
@@ -44,7 +45,8 @@ function inicializaMarcadores() {
     var frase = $(".quadro-de-palavras").text();
     campo.on("input", function(e) {
         var digitado = campo.val();
-      //        var comparavel = frase.substr(0, digitado.length);
+        // var comparavel = frase.substr(0, digitado.length);
+
         if (jQuery.inArray(digitado, collection) > -1) {
             campo.addClass("borda-verde");
             campo.removeClass("borda-vermelha");

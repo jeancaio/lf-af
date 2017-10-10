@@ -28,6 +28,10 @@
     border: 3px solid red;
 }
 
+.cor-verder{
+  background-color: green;
+}
+
 .tabela-automato td,th{
   border: 1px solid lightgray;
   padding: 5px;
