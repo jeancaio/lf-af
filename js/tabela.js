@@ -54,14 +54,14 @@ function tabela_geral(estados_i){
   tabela = $('#automato');
 	tabela.html('');
 	// Define o cabeçalho da tabela
-	var tr = $( document.createElement('tr') );
-	var th = $( document.createElement('th') );
+	var tr = $("<tr>");
+	var th = $("<th>");
 	th.html('-'); // Adiciona o titulo da coluna de estado
 	tr.append(th);
 	var a = 'a';
 	var z = 'z';
 	for (var j = a.charCodeAt(0); j <= z.charCodeAt(0); j++) { // Adiciona todas as caracters no cabeçalho da tabela
-		var th = $( document.createElement('th') );
+		var th = $("<th>");
 		th.html(String.fromCharCode(j));
 		tr.append(th);
 	}
@@ -69,8 +69,8 @@ function tabela_geral(estados_i){
 
 	// Itera entre os estados
 	for(var i = 0; i < estados_i.length; i++){
-		var tr = $( document.createElement('tr') ); // Cria uma nova linha para cada estado
-		var td = $( document.createElement('td') ); // Cria a celula do estado
+		var tr = $("<tr>"); // Cria uma nova linha para cada estado
+		var td = $("<td>"); // Cria a celula do estado
 		if(estados_i[i]['final']){
 			td.html('q' + estados_i[i]['estado'] + '*');
 		} else {
@@ -82,7 +82,7 @@ function tabela_geral(estados_i){
 		var z = 'z';
 		for (var j = a.charCodeAt(0); j <= z.charCodeAt(0); j++) {
 			var caracter = String.fromCharCode(j);
-			var td = $( document.createElement('td') );
+			var td = $("<td>");
 			td.addClass('caracter_'+caracter);
 			if(estados_i[i][caracter] != '-'){
 				td.html('q' + estados_i[i][caracter]);
