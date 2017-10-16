@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
 
-    <title>Analisador Léxico</title>
-    <link rel="stylesheet" href="css/libs/materialize.min.css">
-    <link rel="stylesheet" href="css/libs/google-fonts.css">
-    <link rel="stylesheet" href="css/estilos.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Analisador Léxico</title>
+  <link rel="stylesheet" href="css/libs/materialize.min.css">
+  <link rel="stylesheet" href="css/libs/google-fonts.css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
   <nav>
-     <div class="nav-wrapper">
+    <div class="nav-wrapper">
     </div>
   </nav>
 
   <div class="container">
-    <h1 class="center">Analisador Léxico</h1>
+    <h1 class="center"></h1>
 
     <div class="row">
       <div class="col m5 col s12">
-        <h3 class="center">Área de testes</h3>
+        <h3 class="center">asdas</h3>
         <div class="row">
-          <div style="margin-top: 7px" class="col m10 col s10 tooltipped" data-position="botton" data-delay="50"  data-tooltip="Adicione uma palavra de cada vez">
+          <div style="margin-top: 7px" class="col m10 col s10 tooltipped" data-position="botton" data-delay="50" data-tooltip="Adicione uma palavra de cada vez">
             <input placeholder="Insira aqui as palavras para compor o dicionário léxico" class="campo-dicionario"></imput>
           </div>
-            <a class="btn-floating btn-small waves-effect waves-light blue botao-inserir tooltipped" data-position="botton" data-delay="50"  data-tooltip="Adicionar palavra ao dicionário">
+          <a class="btn-floating btn-small waves-effect waves-light blue botao-inserir tooltipped" data-position="botton" data-delay="50" data-tooltip="Adicionar palavra ao dicionário">
               <i class="material-icons">add</i>
             </a>
         </div>
 
         <div class="row">
           <div class="col m10 col s10">
-            <label for=".quadro-de-palavras" >Dicionário Léxico</label>
-            <p class="quadro-de-palavras" ></p>
+            <label for=".quadro-de-palavras">Dicionário Léxico</label>
+            <p class="quadro-de-palavras"></p>
           </div>
-            <a style="margin-top: 30px" class="btn tooltipped btn-floating btn-small waves-effect waves-light blue inserir-na-tabela" data-position="top" data-delay="50"  data-tooltip="Montar tabela">
+          <a style="margin-top: 30px" class="btn tooltipped btn-floating btn-small waves-effect waves-light blue inserir-na-tabela" data-position="top" data-delay="50" data-tooltip="Montar tabela">
               <i class="material-icons">view_headline</i>
             </a>
         </div>
 
         <div class="row">
           <div class="col s12 col m12">
-            <textarea placeholder="Teste as palavras aqui" class="campo-digitacao campo-desativado" rows="8" cols ="40"></textarea>
+            <textarea placeholder="Teste as palavras aqui" class="campo-digitacao campo-desativado" rows="8" cols="40"></textarea>
           </div>
         </div>
       </div>
 
 
       <div class="col s12 col m7">
-        <section >
+        <section>
           <h3 class="center">Tabela</h3>
           <table id="automato" class="centered bordered tabela-automato"></table>
 
@@ -64,4 +66,5 @@
   <script src="js/tabela.js"></script>
 
 </body>
+
 </html>

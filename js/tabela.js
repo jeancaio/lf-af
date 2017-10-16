@@ -1,7 +1,7 @@
-// var collection = [];
+var collection = [];
 var estados = [[]];
 var geral = 0;
-var Tabela = [];
+var tabela = [];
 
 function linhas(){
   var estados_i = [];
@@ -30,7 +30,6 @@ function linhas(){
 //cria a tabela com os estados do dicionario e as linhas correspondentes
 function insereTabela() {
   for (var i = 0; i < collection.length; i++) {
-
 		var estado_atual = 0;
 		var palavra_i = collection[i];
 		for(var j = 0; j < palavra_i.length; j++){
