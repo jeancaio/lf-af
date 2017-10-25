@@ -1,7 +1,6 @@
 // var collection = [];
 var estados = [[]];
 var geral = 0;
-var Tabela = [];
 
 function linhas(){
   var estados_i = [];
