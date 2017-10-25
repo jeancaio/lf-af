@@ -10,11 +10,6 @@
     font-size: 18px;
 }
 
-.frase {
-    font-size: 35px;
-    text-align: left;
-}
-
 .campo-desativado {
     background-color: lightgray;
 }
@@ -39,11 +34,11 @@
 
 .estado_selecionado td,
 .letra_selecionada{
-	background: rgba(17,163,247,0.1);
+	background: rgba(250,128,114,0.1);
 }
 .estado_selecionado td.letra_selecionada{
 	color: #fff;
-	background: rgba(17,163,247,0.7);
+	background: rgba(250,128,114,0.7);
 }
 #box.acerto,
 #box.acerto input{
