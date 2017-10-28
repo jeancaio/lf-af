@@ -21,12 +21,10 @@ function linhas(){
 			aux['final'] = true;
 		}
 		estados_i.push(aux);
-	};
-	console.log(estados_i);
+	}
 	return estados_i;
 }
 
-//cria a tabela com os estados do dicionario e as linhas correspondentes
 function insereTabela() {
   for (var i = 0; i < collection.length; i++) {
 
@@ -52,24 +50,23 @@ function insereTabela() {
 function tabela_geral(estados_i){
   tabela = $('#automato');
 	tabela.html('');
-	// Define o cabeçalho da tabela
-	var tr = $("<tr>");
+	var tr = $("<tr class='cabecalho'>");
 	var th = $("<th>");
-	th.html('-'); // Adiciona o titulo da coluna de estado
+	th.html('-');
 	tr.append(th);
 	var a = 'a';
 	var z = 'z';
-	for (var j = a.charCodeAt(0); j <= z.charCodeAt(0); j++) { // Adiciona todas as caracters no cabeçalho da tabela
+	for (var j = a.charCodeAt(0); j <= z.charCodeAt(0); j++) {
 		var th = $("<th>");
 		th.html(String.fromCharCode(j));
 		tr.append(th);
 	}
 	tabela.append(tr);
 
-	// Itera entre os estados
+	// Iteração
 	for(var i = 0; i < estados_i.length; i++){
-		var tr = $("<tr>"); // Cria uma nova linha para cada estado
-		var td = $("<td>"); // Cria a celula do estado
+		var tr = $("<tr class='trestado'>");
+		var td = $("<td>");
 		if(estados_i[i]['final']){
 			td.html('q' + estados_i[i]['estado'] + '*');
 		} else {

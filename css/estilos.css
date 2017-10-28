@@ -18,9 +18,14 @@
     border: 3px solid green;
 }
 
-.tabela-automato td,th{
-  border: 1px solid lightgray;
-  padding: 5px;
+.cabecalho {
+  background-color: lightgray;
+  width: 80px;
+}
+
+.trestado td,th{
+  border: 1px solid #808080;
+  padding: 5px 10px;
 }
 
 .estado_selecionado td,
@@ -30,4 +35,14 @@
 .estado_selecionado td.letra_selecionada{
 	color: #fff;
 	background: rgba(0,255,0,0.7);
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+      width: 100%;
+  }
+}
+
+body {
+  background-color: 	#F8F8FF;
 }
