@@ -4,7 +4,7 @@
     border: 1px solid black;
 }
 
-.quadro-de-palavras{
+.quadro-de-palavras, .acertos, .erros{
     border: 1px solid lightgray;
     height: 30px;
     font-size: 18px;
@@ -14,17 +14,8 @@
     background-color: lightgray;
 }
 
-
 .borda-verde {
     border: 3px solid green;
-}
-
-.borda-vermelha {
-    border: 3px solid red;
-}
-
-.cor-verder{
-  background-color: green;
 }
 
 .tabela-automato td,th{
@@ -34,21 +25,9 @@
 
 .estado_selecionado td,
 .letra_selecionada{
-	background: rgba(250,128,114,0.1);
+	background: rgba(0,255,0,0.1);
 }
 .estado_selecionado td.letra_selecionada{
 	color: #fff;
-	background: rgba(250,128,114,0.7);
-}
-#box.acerto,
-#box.acerto input{
-	border-color: #27ae60;
-	color: #27ae60;
-	background: rgba(39, 174, 96, 0.1);
-}
-#box.erro,
-#box.erro input{
-	border-color: #e74c3c;
-	color: #e74c3c;
-	background: rgba(231, 76, 60, 0.1);
+	background: rgba(0,255,0,0.7);
 }

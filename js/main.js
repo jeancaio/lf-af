@@ -7,7 +7,10 @@ var collection = [];
 var Tabela = [];
 campo.attr("disabled", true);
 
-//inclui palavras no dicionario lexico quando clica no botao
+/*
+ * inclui palavras no dicionario lexico quando clica no botao
+ *
+ */
 incluirPalavras.on('click', function(){
   collection.push(campoDicionario.val());
   campoDicionario.val("");
@@ -40,64 +43,61 @@ inserirNaTabela.one('click', function(){
   });
 });
 
-//detecta o espaço para poder testa a próxima palavra
+/*
+ * detecta o espaço para poder testa a próxima palavra e adiciona a \
+ *                                 palavra a lista de erros e acertos
+ *
+ */
 $('#campo-digitacao').keyup(function(e) {
+  var digitado = campo.val().replace(/( )+/g, '');
+
   if(e.keyCode == 32){
+    e.preventDefault();
+    if (jQuery.inArray(digitado, collection) > -1) {
+      console.log('acerto');
+      $(".acertos").append(campo.val());
+    } else {
+      $(".erros").append(campo.val());
+    }
       campo.val("")
       inicializaMarcadores();
   }
 });
 
+/*
+ * validaçoes da tabela
+ *
+ */
 function inicializaMarcadores(event) {
-  var primeiro = 'a';
-  var ultimo = 'z'
-  var palavras = $('#campo-digitacao').val();
+  var a = 'a';
+  var z = 'z'
+  var campoEscrito = $('#campo-digitacao').val();
 
   if(campo.length == 1){
-    campo.removeClass('borda-verde');
-  	campo.removeClass('borda-vermelha');
   	$('#automato tr').removeClass('estado_selecionado');
   	$('#automato td').removeClass('letra_selecionada');
   }
 
   var digitado = campo.val();
-  var frase = dic.text();
-  var comparavel = frase.substr(0, digitado.length);
   var estado = 0;
-  var letter_error = false;
+  var errado = false;
 
   if (jQuery.inArray(digitado, collection) > -1) {
-  // if (digitado == comparavel) {
       campo.addClass("borda-verde");
-      campo.removeClass("borda-vermelha");
   } else {
-      campo.addClass("borda-vermelha");
       campo.removeClass("borda-verde");
   }
-  for (var i = 0; i < palavras.length; i++) {
-		// Verifica se o dígito está entre a - z
-		if(palavras[i].charCodeAt(0) >= primeiro.charCodeAt(0) && palavras[i].charCodeAt(0) <= ultimo.charCodeAt(0) && letter_error == false){
-			marcaTabela(estado, palavras[i]);
-			if(Tabela[estado][palavras[i]] != '-'){ // se o estado não for de erro, ele aceita
-				estado = Tabela[estado][palavras[i]];
-				// inAccept();
-			} else { // Rejeita caso o estado seja de erro
-				// inError();
-				letter_error = true;
-				// break;
+  for (var i = 0; i < campoEscrito.length; i++) {
+		if(campoEscrito && errado == false){
+			marcaTabela(estado, campoEscrito[i]);
+			if(Tabela[estado][campoEscrito[i]] != '-'){
+				estado = Tabela[estado][campoEscrito[i]];
+			} else {
+				errado = true;
 			}
 		}
 	}
 }
-
-// function inError(){
-// 	$('#box').removeClass('acerto');
-// 	$('#box').addClass('erro');
-// }
-// function inAccept(){
-// 	$('#box').addClass('acerto');
-// 	$('#box').removeClass('erro');
-// }
 
 function marcaTabela(linha, coluna){
 	$('#automato tr').removeClass('estado_selecionado');
